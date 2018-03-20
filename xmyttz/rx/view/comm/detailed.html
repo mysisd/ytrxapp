@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="../xmyttz/view/rx_head.html"></include>
+    <link rel="stylesheet" href="/Public/css/share.css">
+    <link rel="stylesheet" href="/Public/css/share_style1_32.css">
+    <link rel="stylesheet" href="/Public/css/demo.css">
+    <link rel="stylesheet" href="/Public/css/comment.css">
+    <link rel="stylesheet" href="/Public/css/style.css">
+    <script src="/Public/js/share.js"></script>
+    <style>
+        @media(max-width:768px) {
+
+            #title{
+                width: 98%;
+                height: 70px;
+                margin: 10px auto;
+
+                font-size: 25px;
+                font-weight: bold;
+                line-height: 35px;
+            }
+            #detail{
+                width: 100%;
+                height: 40px;
+                background-color: antiquewhite;
+            }
+            #detail li{
+                float: left;
+                height: 40px;
+
+            }
+            #link{
+                display: none;
+                width: 100%;
+                height: 100px;
+                background-color: rgba(255,255,225,0.5);
+                position: fixed;
+                bottom:0;
+                z-index: 100000;
+            }
+            #cancel{
+                width: 100%;
+                height: 50%;
+                text-align: center;
+                line-height: 50px;
+                font-size: 21px;
+            }
+            #comments{
+                width: 100%;
+                background-color: red;
+            }
+            #comments li{
+                width: 100%;
+                height: 60px;
+                background-color: #00a0e9;
+            }
+            #content{
+                word-wrap: break-word;
+                line-height: 44px;
+                font-size: 20px;
+                text-indent: 2em;
+            }
+
+        }
+    </style>
+</head>
+<body style="background-color: white">
+<div class="buy_title" style="border-bottom: 1px solid rgba(1,1,1,0.2);background-color: black;color:white">
+    <ul>
+        <li><img  style="width: 78%" src="/Public/img/left_arrow_w.png" alt=""></li>
+        <li style="text-align: center;width: 66%;margin: 14px 10px;">帖子详情</li>
+        <li id="pp"><img style="width: 78%" src="/Public/img/fenxiang.png" alt=""></li>
+    </ul>
+</div>
+<div id="title">{$data.title}</div>
+<div id="detail">
+    <ul>
+        <li style="width: 20%"><img src="" alt=""></li>
+        <li style="width: 30%">{$data.nickname}</li>
+        <li style="width: 30%">{$data.date}</li>
+    </ul>
+</div>
+<input type="hidden" name="id" id="id" value="{$data.id}" >
+<div id="content">{$data.content}</div>
+<div class="commentAll">
+    <!--回复区域 begin-->
+    <div class="comment-show">
+        <foreach name="datas" item="v">
+            <div class="comment-show-con clearfix">
+            <div class="comment-show-con-img pull-left">
+                <img src="/Public/img/header-img-comment_03.png" alt=""></div>
+            <div class="comment-show-con-list pull-left clearfix">
+                <div class="pl-text clearfix">
+                    <a href="#" class="comment-size-name">{$v.sender} : </a>
+                    <span class="my-pl-con">&nbsp;{$v.content}</span>
+                </div>
+                <div class="date-dz">
+                    <span class="date-dz-left pull-left comment-time">{$v.date}</span>
+                    <!--<div class="date-dz-right pull-right comment-pl-block">-->
+                        <!--<a href="javascript:;" class="removeBlock">删除</a>-->
+                        <!--<a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a>-->
+                        <!--<span class="pull-left date-dz-line">|</span>-->
+                        <!--<a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a>-->
+                    <!--</div>-->
+                </div>
+                <div class="hf-list-con"></div>
+            </div>
+        </div>
+        </foreach>
+    </div>
+    <!--回复区域 end-->
+</div>
+<div class="commentbox">
+    <textarea cols="80" rows="50" placeholder="来说几句吧......" class="mytextarea" id="text"></textarea>
+    <div class="btn btn-info pull-right" id="comment">评论</div>
+</div>
+<div style="" id="link">
+    <div style="height: 50%">
+        <div id="socialShare" ></div>
+    </div>
+    <div style="" id="cancel">取消</div>
+</div>
+
+
+<script>
+    $(function() {
+        $("#socialShare").socialShare({
+            content: '',
+            url:'',
+            titile:''
+        });
+        $('#pp').click(function () {
+            if($(".msb_main").is(".active")){
+//                $('#socialShare').hide();
+                $('#link').hide();
+            }else if(!$(".msb_main").is(".active")){
+                $('body').css({
+                    'backgroundColor':'black',
+                    'z-index':'1000',
+                    opacity:0.5
+                })
+                $('body').width(window.screen.width)
+                $('body').height(window.screen.height)
+                $('#link').show();
+                $('#socialShare').show();
+                $('.commentbox').hide();
+            }
+           $('.msb_main').trigger('click');
+        })
+        $('#cancel').click(function () {
+          $('#link').hide();
+            $('body').css({
+                'backgroundColor':'white',
+                opacity:1
+            })
+            $('body').width(window.screen.width)
+            $('body').height(window.screen.height);
+            $('.commentbox').show();
+        })
+        $('#comment').click(function () {
+           var text=$('#text').val();
+           var id=$('#id').val();
+           $.ajax({
+               url:'/rx/comm/detailed',
+               type:'post',
+               data:{'text':text,'id':id},
+               success:function (data) {
+                   if(data.res=='success'){
+                       alert('评论成功');
+                       location.reload();
+                   }else if(data.res=='error'){
+                       alert('评论失败');
+                   }else{
+                       alert('内容不能为空');
+                   }
+               }
+           })
+        })
+    });
+
+</script>
+
+</body>
+</html>

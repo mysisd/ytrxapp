@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>查看银行卡</title>
+    <include file="../xmyttz/view/rx_head.html"/>
+
+    <link href="/Public/css/user.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<include file="../xmyttz/view/rx_header.html"></include>
+<header id="head" class="mui-bar mui-bar-nav " style="background-color: rgb(250,250,250)">
+	<a href="/rx/user/index1" class="mui-action-back mui-icon-left-nav  mui-icon mui-pull-left " style="color: black"></a>
+	<h1 class="mui-title">查看银行卡</h1>
+</header>
+<div style="margin: 75px 0">
+	<div class="user_content">
+		<div class="user_box">
+			<div class="user_right">
+				<h4><span>绑定出金银行卡</span><a href="/{$Request.module}/{$Request.controller}/userInfo">返回设置</a></h4>
+				<div id="setcard">
+					<div class="setcard_box">
+						<input type="hidden" value="{$user.idcard}" id="setcard_idcard">
+						<empty name="user.card">
+							<a href="javascript:;" class="add_card" id="setcard_addcard">绑定银行卡</a>
+							<else />
+
+							<p><span>银行卡号</span><b>{$card}</b></p>
+							<p><span>持卡人</span><b>{$user.name}</b></p>
+							<p><span>银行名称</span><b>{$user.bankname}</b></p>
+							<p><span>开户省</span><b>{$user.cardprovince}</b></p>
+							<p><span>开户市</span><b>{$user.cardcity}</b></p>
+							<p><span>支行名称</span><b>{$user.bankbranchname}</b></p>
+							<p><span>预留手机号</span><b>{$cardphone}</b></p>
+
+						</empty>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<div class="tanchu_system" id="bankbranchname_box">-->
+		<!--<div class="tanchu_system_box bankbranchname_box">-->
+			<!--<h3>请输入支行名称<a href="javascript:;" class="tanchu_close">&times;</a></h3>-->
+			<!--<div class="content_box"><div class="tanchu_content"><p>支行名称：<input type="text" id="bankbranchname_input" class="tanchu_input" style="width:200px;"></p></div></div>-->
+			<!--<div class="answer">-->
+				<!--<a href="javascript:;" class="tanchu_btn" id="bankbranchname_sub">确定</a>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+</div>
+
+
+
+</body>
+</html>

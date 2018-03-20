@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+    <script src="/Public/js/rx_money.js"></script>
+</head>
+<body style="background-color: white">
+
+    <div class="buy_shop">
+    <p class="hand">手数</p>
+    <div class="hand_mes">
+        <input type="number" value="1" id="count">
+        <span class="span"><img src="/Public/img/buy_reduction.png" alt="" id="redu"></span>
+        <span class="span1"><img src="/Public/img/buy_add.png" alt=""  id="add1"></span>
+    </div>
+        <p class="buy_mess ">最多可买: <span ><i id="hand">{$hand}</i><i>手</i></span></p>
+        <input type="hidden" value="{$pay}" id="pay">
+        <input type="hidden" value="{$sell}" id="sell">
+        <input type="hidden" value="{$type}" id="type">
+</div>
+<div class="buy_back1"></div>
+<!--资金动态-->
+<div class="buy_active"><span>资金动态</span></div>
+<div>
+    <table width="100%" class="table" id="tablevalue">
+        <tr>
+            <th width=50%>动态权益 <span>0.0</span> </th>
+            <th width=50%>可用资金 <span>0.0</span></th>
+        </tr>
+        <tr>
+            <th width=50%>占用保证金 <span>0.0</span> </th>
+            <th width=50%>冻结资金 <span>0.0</span></th>
+        </tr>
+    </table>
+</div>
+<div class="buy_button">买入</div>
+<script>
+    $('.buy_button').click(function () {
+        var pay=$('#pay').val();
+        var sell=$('#sell').val();
+        var name=$('#type').val();
+//        var num = name.replace(/[^0-9]/ig,"");
+//        var value = name.slice('left',-4);
+        $.ajax({
+            url:'/rx/rx/add_positions',
+            type:'post',
+            dataType:'json',
+            data:{'hand':$('#count').val(),'pay':pay,'sell':sell,'type':name},
+            success:function (data) {
+                if(data.res=='success'){
+                    alert('购买成功');
+                    location.reload();
+                }else if(data.res=='error'){
+                    alert('购买失败');
+                }
+            }
+        })
+
+    })
+
+</script>
+</body>
+</html>

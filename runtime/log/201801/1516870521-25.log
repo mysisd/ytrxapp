@@ -1,0 +1,30 @@
+---------------------------------------------------------------
+[ 2018-01-25T16:55:21+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/send_GC
+[ info ] tp.com/rx/rx/send_GC [运行时间：0.377022s][吞吐率：2.65req/s] [内存消耗：7,361.26kb] [文件加载：33]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'send_GC',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'password=AVgY88zsGNocBZ2k6VvNE2Xo2cZxZSzkICJ%2F3EfatntT%2BkvI6QfhzoBYB8Xg8kezNtAz94I%2Fy0zU64z5fT6fTNXlidtRiMeqpvYrTrRLsXav%2FbEDz3VFMVwrQ5XDsBksK6D1jOsxUeMlk9Tn8orL2HnUeepEefaHGaMOKOEqFqc%3D; PHPSESSID=ju5pvg897v71r04f6696f951b7; UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516858569',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->send_GC[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ LOG ] INIT File

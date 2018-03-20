@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+    <script src="/Public/js/rx_money.js"></script>
+</head>
+<body style="background-color: white">
+<div class="buy_shop buy_price">
+    <p class="hand">价格</p>
+    <div class="hand_mes">
+        <input type="text" value="" id="time_sell">
+        <span class="span"><img src="/Public/img/buy_reduction.png" alt=""  id="redu1"></span>
+        <span class="span1"><img src="/Public/img/buy_add.png" alt="" id="add2"></span>
+    </div>
+    <p class="hand">手数</p>
+    <div class="hand_mes">
+        <input type="text" value="1" id="count">
+        <span class="span"><img src="/Public/img/buy_reduction.png" alt="" id="redu"></span>
+        <span class="span1"><img src="/Public/img/buy_add.png" alt="" id="add1"></span>
+    </div>
+    <p class="buy_mess">最多可买: <span id="hand">0 <i>手</i></span></p>
+</div>
+<div class="buy_back"></div>
+<!--资金动态-->
+<div class="buy_active1"><span>资金动态</span></div>
+<div>
+    <table width="100%" class="table1" id="tablevalue1">
+        <tr><th width=50%>动态权益 <span>0.0</span> </th><th width=50%>可用资金 <span>0.0</span></th></tr>
+        <tr><th width=50%>动态权益 <span>0.0</span> </th><th width=50%>可用资金 <span>0.0</span></th></tr>
+    </table>
+</div>
+<div class="buy_button1">买入</div>
+<script>
+    $('#time_sell').val($.cookie('pay_money'))
+    $('.buy_button1').click(function () {
+        var name=$.cookie('names');
+        var pay=$.cookie('pay_money');
+        var sell=$.cookie('sell_money');
+        var num = name.replace(/[^0-9]/ig,"");
+        var value = name.slice('left',-4);
+        $.ajax({
+            url:'/rx/user/reservation',
+            type:'post',
+            dataType:'json',
+            data:{'type':value,'num':num,'money':$('#time_sell').val(),'count':$('#count').val()},
+            success:function (data) {
+                if(data.res==1){
+                    alert('购买成功');
+                    location.reload();
+                }
+        }
+        })
+    })
+</script>
+</body>
+</html>

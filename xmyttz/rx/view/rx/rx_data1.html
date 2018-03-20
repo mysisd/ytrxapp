@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/Public/js/jquery.js"></script>
+    <script src="/Public/js/jquery.cookie.js"></script>
+
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+</head>
+<body>
+<div id="chartdiv" style="width: 100%; height: 300px; overflow: hidden; text-align: left; display: block;"></div>
+
+<script>
+
+        var text=$.cookie('names');
+        var num = text.replace(/[^0-9]/ig,"");
+        var values = text.slice('left',-4);
+        var chart;
+        var chartTitle;
+        var chartWebID;
+        var chartData = [];
+        $.ajax({
+            url:'/rx/rx/echart',
+            type:'post',
+            dataType:'json',
+            data:{'num':num,'value':values},
+            async: false,
+            success:function (data) {
+
+                var arr={};
+                var row=[];
+
+                for(var i=0;i<data.length;i++){
+                    arr={"date":data[i].DateTimeStamp.substr(0,10),"value":data[i].QLastPrice}
+                    row.push({"date":data[i].DateTimeStamp,"value":data[i].QLastPrice})
+                }
+
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+
+                chart.dataProvider = row;
+                chart.dataDateFormat = "YYYY-MM-DD HH:NN:SS";
+                chart.categoryField = "date";
+
+
+
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.parseDates = true;
+                categoryAxis.minPeriod = "ss";
+                categoryAxis.gridAlpha = 0.1;
+                categoryAxis.minorGridAlpha = 0.1;
+                categoryAxis.axisAlpha = 0;
+                categoryAxis.minorGridEnabled = true;
+                categoryAxis.inside = true;
+
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.tickLength = 0;
+                valueAxis.axisAlpha = 0;
+                valueAxis.showFirstLabel = false;
+                valueAxis.showLastLabel = false;
+                chart.addValueAxis(valueAxis);
+
+
+                // GRAPH
+                var graph = new AmCharts.AmGraph();
+                graph.dashLength = 3;
+                graph.lineColor = "#00CC00";
+                graph.valueField = "value";
+                graph.dashLength = 3;
+                graph.bullet = "round";
+                graph.balloonText = "<span style='font-size:18px;'>[[value]]</span>";
+                chart.addGraph(graph);
+
+
+                // CURSOR
+                var chartCursor = new AmCharts.ChartCursor();
+                chart.addChartCursor(chartCursor);
+
+
+                // SCROLLBAR
+                var chartScrollbar = new AmCharts.ChartScrollbar();
+                chart.addChartScrollbar(chartScrollbar);
+
+
+                // HORIZONTAL GREEN RANGE
+                var guide = new AmCharts.Guide();
+                guide.value = 10;
+                guide.toValue = 20;
+                guide.fillColor = "#00CC00";
+                guide.inside = true;
+                guide.fillAlpha = 0.2;
+                guide.lineAlpha = 0;
+                valueAxis.addGuide(guide);
+                chart.write("chartdiv");
+//                var chart = AmCharts.makeChart("chartdiv", {
+//                    "type": "serial",
+//                    "theme": "light",
+//                    "marginRight": 40,
+//                    "marginLeft": 40,
+//                    "autoMarginOffset": 20,
+//                    "mouseWheelZoomEnabled":true,
+//                    "dataDateFormat": "YYYY-MM-DD HH:NN:SS ",
+//                    "valueAxes": [{
+//                        "id": "v1",
+//                        "axisAlpha": 0,
+//                        "position": "left",
+//                        "ignoreAxisWidth":true
+//                    }],
+//                    "balloon": {
+//                        "borderThickness": 1,
+//                        "shadowAlpha": 0
+//                    },
+//                    "graphs": [{
+//                        "id": "g1",
+//                        "balloon":{
+//                            "drop":true,
+//                            "adjustBorderColor":false,
+//                            "color":"#ffffff"
+//                        },
+//                        "bullet": "round",
+//                        "bulletBorderAlpha": 1,
+//                        "bulletColor": "#FFFFFF",
+//                        "bulletSize": 5,
+//                        "hideBulletsCount": 50,
+//                        "lineThickness": 2,
+//                        "title": "red line",
+//                        "useLineColorForBulletBorder": true,
+//                        "valueField": "value",
+//                        "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
+//                    }],
+//                    "chartScrollbar": {
+//                        "graph": "g1",
+//                        "oppositeAxis":false,
+//                        "offset":30,
+//                        "scrollbarHeight": 80,
+//                        "backgroundAlpha": 0,
+//                        "selectedBackgroundAlpha": 0.1,
+//                        "selectedBackgroundColor": "#888888",
+//                        "graphFillAlpha": 0,
+//                        "graphLineAlpha": 0.5,
+//                        "selectedGraphFillAlpha": 0,
+//                        "selectedGraphLineAlpha": 1,
+//                        "autoGridCount":true,
+//                        "color":"#AAAAAA"
+//                    },
+//                    "chartCursor": {
+//                        "pan": true,
+//                        "valueLineEnabled": true,
+//                        "valueLineBalloonEnabled": true,
+//                        "cursorAlpha":1,
+//                        "cursorColor":"#258cbb",
+//                        "limitToGraph":"g1",
+//                        "valueLineAlpha":0.2,
+//                        "valueZoomable":true
+//                    },
+//                    "valueScrollbar":{
+//                        "oppositeAxis":false,
+//                        "offset":50,
+//                        "scrollbarHeight":10
+//                    },
+//                    "categoryField": "date",
+//                    "categoryAxis": {
+//                        "parseDates": true,
+//                        "dashLength": 1,
+//                        "minorGridEnabled": true
+//                    },
+//                    "export": {
+//                        "enabled": true
+//                    },
+//                    "dataProvider": row
+//                });
+//
+//                chart.addListener("rendered", zoomChart);
+//
+//                zoomChart();
+//
+//                function zoomChart() {
+//                    chart.zoomToIndexes(chart.dataProvider.length - 40, chart.dataProvider.length - 1);
+//                }
+            }
+        });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="../xmyttz/view/rx_head.html"/>
+    <link rel="stylesheet" href="/Public/css/index2.css">
+    <link rel="stylesheet" href="/Public/css/bass.css">
+    <style>
+        #header_bottom .to_community{
+            background-color:#268bf2;
+            color:#fff;
+        }
+    </style>
+</head>
+<body style="background-color: white">
+<include file="../xmyttz/view/rx_header.html"/>
+
+<div style="width: 100%;height: 50px;background-color: skyblue">
+    <ul>
+        <li style="float: left;width: 30%;height: 50px;text-align: center">
+            <!--<a href="/rx/comm/create">-->
+            <img src="/Public/img/fatie.png" style="width: 25%;line-height: 30px;margin: 6px 0 0 -36px;" id="fatie" alt="">
+            <!--</a>-->
+        </li>
+        <li style="float: left;width: 40%;height: 50px;text-align: center">
+            <p style="text-align: center;font-size: 28px;height:50px;background-color: skyblue;font-family: monospace;">社区</p>
+        </li>
+        <li id="refresh" style="float: left;width: 30%;height: 50px;text-align: center">
+            <img src="/Public/img/shuaxin.png" style="width: 25%;line-height: 30px;margin: 10px 0 0 37px;;" id="shuaxin"  alt="">
+        </li>
+    </ul>
+</div>
+<div class="slider" style="margin: -10px 0px;">
+    <ul class="slider-main">
+        <li class="slider-panel" >
+            <a target="_blank"><img alt="" title="" src="/Public/img/banner/bg1.jpg"></a>
+            <p class="slider_title">四大央行掌门人齐聚一堂1</p>
+        </li>
+        <li class="slider-panel" style="display: none;">
+            <a target="_blank"><img alt="" title="" src="/Public/img/banner/bg2.jpg"></a>
+            <p class="slider_title">四大央行掌门人齐聚一堂2</p>
+        </li>
+        <li class="slider-panel" style="display: none;">
+            <a target="_blank"><img alt="" title="" src="/Public/img/banner/bg3.jpg"></a>
+            <p class="slider_title">四大央行掌门人齐聚一堂3</p>
+        </li>
+        <li class="slider-panel" style="display: none;">
+            <a target="_blank"><img alt="" title="" src="/Public/img/banner/bg4.jpg"></a>
+            <p class="slider_title">四大央行掌门人齐聚一堂4</p>
+        </li>
+    </ul>
+
+    <div class="slider-extra">
+    </div>
+</div>
+<div style="margin: 134px 0">
+    <ul class="dynamic-list">
+        <!--<div class="dynamic-list-head">-->
+        <!--<i class="dynamic-i-l icon-uniE925"></i>-->
+        <!--<b>热门动态</b>-->
+        <!--<i class="dynamic-i-r icon-uniE906 fr"></i>-->
+        <!--</div>-->
+        <foreach name="data" item="v">
+            <li>
+                <a href="/rx/comm/detailed?id={$v.id}">
+                    <img class="cy-media-object pull-left" src="/Public/img/st1.jpg">
+                    <div class="cy-media-body">
+                        <h3>{$v.title}</h3>
+                        <p class="cy-ellipsis">{$v.content}</p>
+                        <p class="cy-ellipsis cy-heatTime">
+                            <span><i class="icon-uniE92F"></i>{$v.comm_num}</span>&nbsp;&nbsp;
+                            <span><i class="icon-uniE930"></i>{$v.thumb_num}</span>
+                            <span class="fr">{$v.date}</span>
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </foreach>
+
+
+
+    </ul>
+</div>
+<script>
+    $(function () {
+
+        $('#fatie').click(function () {
+            $.ajax({
+                url:'/rx/comm/ser_name',
+                type:'post',
+                success:function (data) {
+                    console.log(data.nickname);
+                    if(data.nickname==null){
+                     location.href='/rx/comm/nickname';
+                    }else{
+                        location.href='/rx/comm/create';
+                    }
+                }
+            })
+        })
+
+        $('#refresh').click(function () {
+            location.reload();
+        })
+    })
+</script>
+</body>
+</html>

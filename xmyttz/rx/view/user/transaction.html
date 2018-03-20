@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+    <script src="/Public/js/rx_money.js"></script>
+    <style>
+        #header_bottom .to_goods{
+            background-color:#268bf2;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<include file="../xmyttz/view/rx_header.html"></include>
+<div class="tra">
+<div class="tra_list">
+<ul>
+    <li>国际期货</li>
+    <!--<li>陈育智</li>-->
+    <!--<li>下单</li>-->
+</ul>
+</div>
+    <div class="tra_interests">
+    <ul>
+        <li>0.00
+        <p>动态权益($)</p>
+        </li>
+        <li>
+            0.00
+            <p>逐笔浮盈($)</p>
+        </li>
+        <li>
+            0.00%
+            <p>持仓风险</p>
+        </li>
+        <!--<li>-->
+            <!--<a href="/rx/user/capital">-->
+                <!--<img src="/Public/img/icon_4.png" alt="">-->
+            <!--</a>-->
+
+        <!--</li>-->
+    </ul>
+    </div>
+</div>
+<div style="clear: both;background-color: white"></div>
+<div class="tra_nav">
+    <ul id="list_1">
+        <li class="tra_active" id="position">持仓</li>
+        <li id="posters">账户资金</li>
+        <li id="entrust">委托</li>
+        <li id="deal">成交</li>
+    </ul>
+
+</div>
+<!--持仓表-->
+<div class="position">
+<div>
+    <table width="100%" class="tables" id="tablevalue">
+        <tr>
+            <th width=20%>名称</th>
+            <th width=20%>多空</th>
+            <th width=20%>手数</th>
+            <th width=20%>持仓均价</th>
+            <th width=20%>浮动盈亏</th>
+        </tr>
+    </table>
+</div>
+</div>
+<!--挂单表-->
+<div class="posters" style="display: none">
+    <div class="capital">
+        <p class="p_active">资金动态</p>
+        <div class="cap_active">
+            <ul>
+                <li>
+                    <div class="avc">
+                        <ul>
+                            <li >
+                                <p>
+                                    <span>动态权益</span>
+                                    <span class="span">&nbsp;&nbsp;&nbsp;0.00</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>授信资金</span>
+                                    <span class="span">&nbsp;&nbsp;&nbsp;0.00</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>占用保证金</span>
+                                    <span class="span">0.00</span>
+                                </p>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="vertical" ></li>
+                <li style="margin: -75px 0;">
+                    <div class="avc">
+                        <ul>
+                            <li>
+                                <p>
+                                    <span>可用资金</span>
+                                    <span class="span">0.00</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>可提资金</span>
+                                    <span class="span">0.00</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>冻结资金</span>
+                                    <span class="span">0.00</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="cap_back"></div>
+    <div class="loss">
+        <p class="p_active">盈亏总览</p>
+        <ul>
+            <li>
+                <p>
+                    <span class="profit">逐笔浮动盈亏</span>
+                    <span class="cap_pro">0.00</span>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <span class="profit">盯市浮动盈亏</span>
+                    <span class="cap_pro">0.00</span>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <span class="profit">逐笔平仓盈亏</span>
+                    <span class="cap_pro">0.00</span>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <span class="profit">盯市平仓盈亏</span>
+                    <span class="cap_pro">0.00</span>
+                </p>
+            </li>
+        </ul>
+        <div class="line"></div>
+        <p style="line-height: 36px;padding: 0 16px;font-size: 16px;">
+            <span>当日手续费</span>
+            <span class="cap_pros">0.00</span>
+        </p>
+    </div>
+</div>
+<!--委托表-->
+<div class="entrust" style="display: none">
+    <div>
+        <table width="100%" class="tables" id="tablevalues">
+            <tr>
+                <th width=20%>名称</th>
+                <th width=20%>状态</th>
+                <th width=20%>买卖</th>
+                <th width=20%>委托价</th>
+                <th width=20%>委托量</th>
+                <th width=20%>下单时间</th>
+            </tr>
+            <foreach name="data" item="v">
+                <tr>
+                    <td>{$v.name}</td>
+                    <td>{$v.status}</td>
+                    <td>{$v.deal}</td>
+                    <td>{$v.entrusted_price}</td>
+                    <td>{$v.entrust_amount}</td>
+                    <td>{$v.date}</td>
+                </tr>
+            </foreach>
+        </table>
+    </div>
+</div>
+<!--成交表-->
+<div class="deal" style="display: none">
+    <div>
+        <table width="100%" class="tables" id="tablevaluess">
+            <tr>
+                <th width=20%>名称</th>
+                <th width=20%>成交价</th>
+                <th width=20%>成交量</th>
+                <th width=20%>买/卖</th>
+                <th>交易金额</th>
+                <th width=20%>成交时间</th>
+            </tr>
+
+
+        </table>
+    </div>
+</div>
+<script>
+setInterval(function () {
+    $.ajax({
+        url:'/rx/user/tran_all',
+        type:'post',
+        success:function (data) {
+            $("#tablevalue  tr:not(:first)").empty("");
+            $.each(data,function (k,v) {
+                item="<tr><td>"+v.name+"</td>"+"<td>"+'多'+"</td>"+"<td>"+v.hand+"</td>"+"<td>"+v.position_average+"</td>"+"<td>"+v.floating_profit+"</td>"+"</tr>";
+                $("#tablevalue").append(item);
+            })
+
+        }
+
+
+//            $.each(data,function (k,v)  {
+//                var num = v['name'].replace(/[^0-9]/ig,"");
+//                var value = v['name'].slice('left',-4);
+//                 $.ajax({
+//                    url:'/rx/rx/send_list',
+//                    type:'post',
+//                    dataType:'json',
+//                    data:{'type':value,'num':num},
+//                    success:function (datas) {
+//
+//                        data=datas[0];
+//                        var loss_sell=(data['QLastPrice']-v['position_average'])*v['hand'];
+//                        loss_sell = loss_sell.toFixed(2);
+//                        item="<tr><td>"+v['name']+"</td>"+"<td>"+'多'+"</td>"+"<td>"+v.hand+"</td>"+"<td>"+v.position_average+"</td>"+"<td>"+loss_sell+"</td>"+"</tr>";
+//                        $("#tablevalue").append(item);
+//
+//                    }
+//                })
+//
+//            })
+
+
+    })
+},1000)
+
+
+
+
+
+    $.ajax({
+        url:'/rx/user/clinch_list',
+        type:'post',
+        success:function (data) {
+
+           $.each(data,function (k,v) {
+
+               if(v.sell==0){
+                    var text='卖';
+               }else if(v.sell==1){
+                   var text='买';
+               }
+               var item="<tr><td>"+v.name+"</td>"+"<td>"+v.deal_valence+"</td>"+"<td>"+v.volume+"</td>"+"<td>"+text+"</td>"+"<td>"+v.turnover+"</td>"+"<td>"+v.deal_time+"</td>"+"</tr>";
+               $("#tablevaluess").append(item);
+           })
+        }
+
+    })
+
+
+</script>
+<script>
+    var ul=document.getElementById("list_1");
+    var li=ul.getElementsByTagName("li");
+    for(i=0;i<li.length;i++){
+
+        li[i].onclick=function(){
+            for(j=0;j<li.length;j++){
+                li[j].className=""
+            }
+            this.className="tra_active"
+        }
+    }
+</script>
+</body>
+</html>

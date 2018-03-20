@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+    <style>
+        #header_bottom .to_me{
+            background-color:#268bf2;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<include file="../xmyttz/view/rx_header.html"></include>
+<div class="zhezao"></div>
+<div class="me">
+<p style="text-align: center;line-height: 69px;color:black;font-size: 24px">我的</p>
+<div class="personal">
+    <div class="imgsd">
+        <img width="60" src=""   alt="">
+    </div>
+    <div class="use_list">
+        <p id="username" style="font-size: 20px">{$username}</p>
+        <span class="mui-table-view-cell" style="float: right;margin: -34px -10px">
+            <a class="mui-navigate-right" href="/rx/user/per_info"></a>
+        </span>
+        <p class="name" id="nu">未实名</p>
+        <p class="names"  >身份证资料未完善</p>
+        <p class="name" id="always" style="display: none">已实名
+            <p class="names" style="display: none">身份证资料已完善</p>
+        </p>
+    </div>
+</div>
+    <div class="set">
+
+        <div class="mui-content">
+        <ul class="mui-table-view mui-grid-view mui-grid-12">
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="/rx/user/account">
+                <span class="mui-icon mui-icon-home"></span>
+                <div class="mui-media-body">交易账户</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                <span class="mui-icon mui-icon-email"></span>
+                <div class="mui-media-body">我的赠金</div></a></li>
+            <notempty name="user.card">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="/rx/user/history">
+                    <span class="mui-icon mui-icon-email"></span>
+                    <div class="mui-media-body">交易历史</div></a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="/rx/user/transactions">
+                    <span class="mui-icon mui-icon-email"></span>
+                    <div class="mui-media-body">交易汇总</div></a></li>
+            </notempty>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="/rx/user/system">
+                <span class="mui-icon mui-icon-chatbubble"></span>
+                <div class="mui-media-body">系统设置</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a id="kefu">
+                <span class="mui-icon mui-icon-location"></span>
+                <div class="mui-media-body">联系客服</div></a></li>
+            <!--第二行开始-->
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="/rx/user/guide">
+                <span class="mui-icon mui-icon-search"></span>
+                <div class="mui-media-body">新手指导</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="/rx/user/about">
+                <span class="mui-icon mui-icon-phone"></span>
+                <div class="mui-media-body">关于我们</div></a></li>
+            <!--第二行结束-->
+        </ul>
+    </div>
+    </div>
+    <div class="logout" id="logout">
+        退出登录
+    </div>
+    <div class="kefu">
+        <p>400-850-1626</p>
+        <p>周一 早 9:00 至 周五 晚 6:00</p>
+        <p>
+            <span>
+                <button id="cancel">取消</button>
+            </span>
+            <span>
+                <button id="bohao">拨号</button>
+                <a id="kefu_phone" href="tel://400-850-1626" style="display: none">dddd</a>
+            </span>
+
+        </p>
+</div>
+</div>
+
+<script>
+    $(function () {
+        $.ajax({
+            url:'/rx/user/my',
+            type:'post',
+            success:function (data) {
+                if(data.res=='false'){
+                    return false;
+                }
+                else if(data.res=='success'&&data.front_idcard!=''&&data.back_idcard!=''&&data.handheld_idcard!=''){
+                    $('#nu').hide();
+                    $('#always').show();
+                    $('.names').eq(0).hide();
+                    $('.names').eq(1).show();
+
+
+                }else{
+                    $('#always').hide();
+                    $('#nu').show();
+                    $('.names').eq(0).show();
+                    $('.names').eq(1).hide();
+                }
+                $('.imgsd img').attr('src', data['face'].substr(23));
+
+            }
+        });
+       $('#kefu').click(function () {
+           $('.zhezao').show();
+           $('.kefu').show();
+       })
+        $('#cancel').click(function () {
+            $('.zhezao').hide();
+            $('.kefu').hide();
+        });
+        $("#bohao").click(function(){
+            $("#kefu_phone").trigger("click");
+        });
+        $('#kefu_phone').click(function () {
+            window.location.href = 'tel://400-850-1626' ;
+
+        })
+
+    })
+</script>
+
+</body>
+
+</html>

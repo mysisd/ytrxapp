@@ -1,0 +1,27 @@
+{
+  "datas": [
+    {
+      "open": 2055,
+      "updatetime": "20150129 08:00:00",
+      "status": 1,
+      "high": 2055,
+      "low": 2053,
+      "close": 2054
+    },
+    {
+      "open": 2055,
+      "updatetime": "20150129 08:01:00",
+      "status": 1,
+      "high": 2055,
+      "low": 2054,
+      "close": 2054
+    },
+    {
+      "open": 2055,
+      "updatetime": "20150129 08:02:00",
+      "status": 1,
+      "high": 2055,
+      "low": 2055,
+      "close": 2055
+    }]
+}

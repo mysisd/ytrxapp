@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交易汇总</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">交易汇总</h1>
+</header>
+<div style="margin: 49px 0">
+    <div style="border-bottom: 1px solid rgb(220,220,220)" class="time_sel">
+        <p >
+            <span class="begin_time"> </span>
+            <span style="display: inline-block; width: 20px;font-size: 19px;">至</span>
+            <span class="end_time"></span>
+            <span><img src="/Public/img/sea.png" alt=""></span>
+        </p>
+
+    </div>
+    <div class="tra_all">
+    <ul>
+        <li class="tra_half">
+            <ul>
+                <li >
+                    <p>
+                        <span>贸易合约</span>
+                        <span class="aln">0</span>
+                    </p>
+                </li>
+                <li >
+                    <p>
+                        <span>手续费</span>
+                        <span class="aln">$0</span>
+                    </p>
+                </li>
+                <li >
+                    <p>
+                        <span>出入金</span>
+                        <span class="aln">$0</span>
+                    </p>
+                </li>
+            </ul>
+        </li>
+        <li class="tra_half" style="border-left: 1px solid rgb(220,220,220)">
+            <ul>
+                <li >
+                    <p>
+                        <span>交易次数</span>
+                        <span class="aln">0(0)</span>
+                    </p>
+                </li>
+                <li >
+                    <p>
+                        <span>授信</span>
+                        <span class="aln">$0</span>
+                    </p>
+                </li>
+                <li >
+                    <p>
+                        <span>总盈亏</span>
+                        <span class="aln">$0</span>
+                    </p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+
+</div>
+<script>
+
+    var year=new Date().getFullYear() ;
+    var  month=new Date().getMonth()+1;
+    var day=new Date().getDate();
+    var days=new Date().getDate()+1;
+    $('.begin_time').text(year+'-'+month+'-'+day);
+    $('.end_time').text(year+'-'+month+'-'+days);
+    var dtpicker = new mui.DtPicker({
+        "type": "date",
+        'beginYear':year,
+        "beginMonth":month,
+        "beginDay":day
+    })
+    document.querySelector('.begin_time').addEventListener('tap',function () {
+        dtpicker.show(function(e) {
+            $('.begin_time').text(e.value);
+        })
+    })
+    document.querySelector('.end_time').addEventListener('tap',function () {
+        dtpicker.show(function(e) {
+            $('.end_time').text(e.value);
+        })
+    })
+</script>
+</body>
+</html>

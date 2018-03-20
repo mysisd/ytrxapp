@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重置交易密码</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">重置交易密码</h1>
+</header>
+<div style="margin: 49px 0;background-color: white">
+    <p class="code_text">已发送验证码短信到</p>
+    <input type="hidden" id="phone_one">
+    <p id="phone_code"></p>
+    <div class="resert">
+
+        <div class="mui-input-row">
+            <label style="width: 20%"><img src="/Public/img/icon_5.png" alt=""></label>
+            <input type="text" id="phone"  placeholder="手机号/用户名" >
+        </div>
+        <div class="mui-button-row">
+            <button type="button" class="mui-btn mui-btn-primary " id="resert" style="background-color: rgb(255,206,52);border:none;    width: 300px;color: black;height: 40px;" >下一步</button>
+        </div>
+    </div>
+    <div class="resert_code">
+        <div class="mui-input-row">
+            <label style="width: 20%"><img src="/Public/img/icon_6.png" alt=""></label>
+            <input type="text" style="width: 80%"   placeholder="请输入验证码" id="u_code" >
+            <a  id="get_code"  onclick="sendMessage()">获取验证码</a>
+        </div>
+        <div class="mui-button-row">
+            <button type="button" class="mui-btn mui-btn-primary "  style="background-color: rgb(255,206,52);border:none;    width: 300px;color: black;height: 40px;"  id="next_code">下一步</button>
+        </div>
+    </div>
+    </div>
+
+</div>
+<script>
+    var InterValObj; //timer变量，控制时间
+    var count = 60; //间隔函数，1秒执行
+    var curCount;//当前剩余秒数
+
+
+    function sendMessage() {
+        curCount = count;
+        //设置button效果，开始计时
+        $("#get_code").attr("disabled", "true");
+        $("#get_code").val("请在" + curCount + "秒内输入验证码");
+
+        //向后台发送处理数据
+        var phone=$("#phone_one").val();
+        $.ajax({
+            type: "POST", //用POST方式传输
+            dataType: "text", //数据格式:JSON
+            url: '/rx/register/abc', //目标地址
+            data: "phone=" + phone,
+            success: function (data){
+                if(data.indexOf('success')){
+                    InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+                }
+
+            }
+        });
+    }
+
+
+    //timer处理函数
+    function SetRemainTime() {
+        if (curCount == 0) {
+            window.clearInterval(InterValObj);//停止计时器
+            $("#get_code").removeAttr("disabled");//启用按钮
+            $("#get_code").text("重新发送验证码");
+        }
+        else {
+            curCount--;
+            $('#get_code').css({margin: '-47px 0'});
+            $("#get_code").attr("disabled",true);
+            $("#get_code").text("请在" + curCount + "秒内输入验证码");
+        }
+    }
+   $('#next_code').click(function () {
+       var u_code =$('#u_code').val();
+       if(u_code==''){
+           alert('验证码不能为空');
+           return false;
+       }
+       $.ajax({
+           type: "POST", //用POST方式传输
+           dataType: "text", //数据格式:JSON
+           url: '/rx/user/resert_code', //目标地址
+           data: "code=" + u_code,
+           success:function (data) {
+             var res=JSON.parse(data);
+             if( res['res']=='success'){
+                 location.href='/rx/user/resert_deal';
+             }else{
+                 alert('验证码不正确');
+                 location.href='/rx/user/resert';
+             }
+           }
+       })
+   })
+
+</script>
+</body>
+</html>

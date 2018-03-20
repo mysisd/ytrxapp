@@ -1,0 +1,353 @@
+/*字体*/
+@font-face {
+	font-family: 'Didot' !important;
+	src: url('../font/Didot.ttf');
+}
+/*icon*/
+.icon-qq{
+	background-position: 0 -360px;
+}
+.icon-sina{
+	background-position: 0 -400px;
+}
+.icon-wechat{
+	background-position: 0 -440px;
+}
+.icon-wx{
+	background-position: -5px -241px;
+}
+.icon-down{
+	width: 13px;
+	background-position: -9px -37px;
+}
+.icon-user{
+	background-position: -7px -338px;
+	vertical-align: middle;
+}
+.i-email{
+	display: inline-block;
+	width: 25px;
+	height: 15px;
+	background: url(../images/email.jpg) no-repeat center;
+	vertical-align: middle;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.i-rect{
+	display: inline-block;
+	vertical-align: middle;
+	width: 3px;
+	height: 3px;
+	background-color: #a0644a;
+	margin-right: 5px;
+}
+/*btn*/
+.btn-search{
+	width:20px;
+	height: 20px;
+	background: url(../images/icon.png) no-repeat;
+	background-position: -9px -169px;
+	border: 0;
+}
+.btn-read-more,a.btn-read-more{
+	display: inline-block;
+	padding: 0 20px;
+	height: 28px;
+	line-height: 28px;
+	background: #87543b;
+	color: #efbe96;
+	border-radius: 28px;
+}
+.btn-online,
+a.btn-online{
+	display: inline-block;
+	width: 80px;
+	height: 35px;
+	line-height: 35px;
+	background-color: #b08d6c;
+	text-align: center;
+	font-family: "STZhongsong";
+	color: #fff;
+}
+.btn-dev,a.btn-dev{
+	line-height: 56px;
+	/*border-radius: 56px;*/
+	color: #5f3427;
+	text-align: center;
+}
+.btn-dev:hover,a.btn-dev:hover{
+	opacity: 0.8;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.btn-dev-bg,a.btn-dev-bg{
+	background-color: #af7f51;
+}
+.btn-dev-bg2,a.btn-dev-bg2{
+	background-color: #d3ad74;
+}
+.btn-liu{
+	border:#3a160c solid 1px;
+	font-size: 14px;
+	color:#4f291e;
+	padding: 10px 15px;
+}
+.btn-more,a.btn-more{
+	display: inline-block;
+	border: #d3ad74 solid 1px;
+	color: #d3ad74;
+	width: 100px;
+	height: 34px;
+	line-height: 32px;
+	text-align: center;
+}
+a.btn-more:hover{
+	background-color: #d3ad74;
+	color: #fff;
+}
+/*文本样式*/
+.text-title,a.text-title{
+	color:#af7f51;
+}
+.text-title2,a.text-title2{
+	color:#d1aa72;
+}
+.text-tel{
+	display: none;
+	color: #d18b53;
+	font-size: 18px;
+}
+.text-time,a.text-time{
+	color: #8e6c57;
+}
+.text-tag,a.text-tag{
+	color: #d3ad74;
+}
+/*header*/
+.top-nav{
+	background-color: #2f120a;
+	height: 33px;
+	z-index: 20;
+	position: relative;
+}
+.choice-list{
+	/*display: inline-block;*/
+	/*width: 100px;*/
+	/*height: 25px;*/
+	/*background: #8e5d4e;*/
+	/*border-radius: 25px;*/
+	/*color:#c6a594;*/
+	/*line-height: 27px;*/
+	/*vertical-align: middle;*/
+	/*text-align: center;*/
+	/*margin-right: 20px;*/
+	/*font-size: 12px;*/
+	float: right;
+	margin-right: 15px;
+	height: 33px;
+	line-height: 33px;
+	position: relative;
+}
+.choice-list:after{
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: -15px;
+	bottom: 8px;
+	border-left: #7b5440 solid 1px;
+}
+.choice-list a{
+	color:#b98a6c;
+	font-size: 12px;
+}
+.tel-num{
+	display: inline-block;
+	vertical-align: middle;
+}
+.top-search{
+	float: right;
+	display: inline-block;
+	margin-top: 4px;
+	position: relative;
+	vertical-align: middle;
+}
+.top-search input{
+	width:190px;
+	height: 24px;
+	line-height: 24px;
+	padding-left: 15px;
+	border: #593628 solid 1px;
+	background: transparent;
+	color: #8e7f7a;
+}
+.top-search input:focus{
+	border: #b98a6c solid 1px;
+}
+.top-search .btn-search{
+	position: absolute;
+	right: 0;
+	top: 3.5px;
+}
+.top-sns{
+	float: right;
+	margin-top: 4px;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	margin-right: 30px;
+}
+.top-sns-w{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: -214%;
+	width: 120px;
+	padding-top: 29px;
+	z-index: 10;
+	-webkit-animation:fadeInUp .5s  ease both;
+	-moz-animation:fadeInUp .5s  ease both;
+	animation:fadeInUp .5s  ease both;
+}
+.top-sns-w:before{
+	content: '';
+	position: absolute;
+	top: 18px;
+	left: 43%;
+	border: transparent solid 5px;
+	border-bottom: #fff solid 6px;
+	z-index: 10;
+	width: 0;
+	height: 0;
+}
+.top-sns-img{
+	padding-top: 10px;
+	background-color: #fff;
+	text-align: center;
+}
+.top-sns:hover .top-sns-w{
+	display: block;
+}
+.main-nav{
+	position: relative;
+	z-index: 3;
+	height: 119px;
+	background: url(../images/navbg.png) no-repeat center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.main-nav-list{
+	padding-top: 30px;
+	text-align: justify;
+}
+.main-nav-list>li{
+	display: inline-block;
+	margin-left:35px;
+	vertical-align: middle;
+	position: relative;
+}
+.main-nav-list>li:nth-child(2){
+	margin-left: 0;
+}
+.main-nav-list>li.logo-w{
+	margin-left: 92px;
+	margin-right: 24px;
+}
+.nav-down{
+	position: absolute;
+	top: 89px;
+	left: -17px;
+	width: 185px;
+	height: 42px;
+	z-index: -1;
+}
+.main-nav-list a{
+	display: block;
+	color:#b98a6c;
+	font-size: 15px;
+}
+.main-nav-list a:hover{
+	color: #fff;
+}
+.main-nav-list .mobile-im{
+	display: none;
+	padding: 25px 25px 0 25px;
+}
+.main-nav-sub{
+	display: none;
+	position: absolute;
+	top: 50%;
+	padding-top: 40%;
+	left: -30%;
+	width: 180px;
+	font-size: 13px;
+	-webkit-animation:fadeInUp .5s  ease both;
+	-moz-animation:fadeInUp .5s  ease both;
+	animation:fadeInUp .5s  ease both;
+	z-index: 60;
+}
+@keyframes fadeInUp{
+	0%{opacity:0;
+		transform:translateY(20px)}
+	100%{opacity:1;
+		transform:translateY(0)}
+}
+@-webkit-keyframes fadeInUp{
+	0%{opacity:0;
+		-webkit-transform:translateY(20px)}
+	100%{opacity:1;
+		-webkit-transform:translateY(0)}
+}
+@-moz-keyframes fadeInUp{
+	0%{opacity:0;
+		-moz-transform:translateY(20px)}
+	100%{opacity:1;
+		-moz-transform:translateY(0)}
+}
+.main-nav-sub a{
+	display: block;
+	background-color: #5f3427;
+	color: #b98a6c;
+	line-height:45px;
+	border-top: #7a4e3c solid 1px;
+	padding-left: 20px;
+	padding-right:20px;
+	font-size: 12px;
+}
+.main-nav-sub li:first-child a{
+	border-top: 0;
+}
+.main-nav-list li:hover .main-nav-sub{
+	display: block;
+}
+/*footer*/
+.footer-row{
+	background-color: #f3ece2;
+}
+.footer-row hr{
+	border-top:#d8c8bb solid 1px ;
+}
+.footer-info{
+	background-color: rgb(46,72,112);
+	color:#b98a6c ;
+	font-size: 13px;
+	font-family: "simsun";
+	padding: 40px 0 40px;
+}
+.footer-info a{
+	color:#b98a6c ;
+}
+/*返回顶部*/
+.menu-aside {
+	position: fixed;
+	right:0;
+	bottom:100px;
+	z-index: 100;
+}
+#backtop{
+	display: none;
+}
+.menu-aside a{
+	display: block;
+}

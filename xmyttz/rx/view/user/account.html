@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交易账户</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+    <script src="/Public/js/account.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+<header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">资金明细</h1>
+    </header>
+    <div style="margin: 45px 0">
+        <!--有期货账户的情况下-->
+        <div class="yes_guoji" >
+            <p id="g_title">国际期货</p>
+            <ul>
+                <li>
+                    <p>
+                        <span>资金金额</span>
+                        <span>0.00</span>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <span>浮动收益</span>
+                        <span>0.00</span>
+                    </p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p>
+                        <span>资金净值</span>
+                        <span>0.00</span>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <span>风险度</span>
+                        <span>0.00%</span>
+                    </p>
+                </li>
+            </ul>
+
+        </div>
+        <div class="yes_guoji guonei"style="display: none" >
+            <p id="g_title">国内期货</p>
+            <ul>
+                <li>
+                    <p>
+                        <span>资金金额</span>
+                        <span>0.00</span>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <span>浮动收益</span>
+                        <span>0.00</span>
+                    </p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p>
+                        <span>资金净值</span>
+                        <span>0.00</span>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <span>风险度</span>
+                        <span>0.00%</span>
+                    </p>
+                </li>
+            </ul>
+
+        </div>
+            <div class="mui-content">
+                <ul class="mui-table-view mui-grid-view mui-grid-12">
+                 <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" id="guoji"><a >
+                <span class="mui-icon mui-icon-home"></span>
+                <div class="mui-media-body">国际期货</div><p>立即开通</p></a></li>
+                    <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" id="guonei"><a >
+                <span class="mui-icon mui-icon-email"></span>
+                <div class="mui-media-body">国内期货</div><p>立即开通</p></a></li>
+
+                    <!--第二行开始-->
+
+            <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6"><a >
+                <span class="mui-icon mui-icon-search"></span>
+                <div class="mui-media-body">外汇高级</div><p>立即开通</p></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6"><a >
+                <span class="mui-icon mui-icon-phone"></span>
+                <div class="mui-media-body">外汇标准</div><p>立即开通</p></a></li>
+            <!--第二行结束-->
+        </ul>
+    </div>
+
+    </div>
+
+</body>
+</html>

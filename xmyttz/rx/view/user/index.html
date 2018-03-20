@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>个人中心</title>
+    <include file="../xmyttz/view/rx_head.html"/>
+
+
+    <style>
+        .footer {
+            clear:both;
+        }
+        .shuoming li a img{
+            width: 100px;
+            opacity: 0.7;
+
+        }
+        .shuoming li{
+            float: left;
+
+            margin:0 72px 0 ;
+            text-align: center;
+            font-size: 18px;
+
+        }
+        #header_bottom .to_me{
+            background-color:#268bf2;
+            color:#fff;
+        }
+    </style>
+</head>
+
+<body style="background-color: white">
+<include file="../xmyttz/view/rx_header.html"/>
+<!-- 导航END -->
+
+<!-- 移动端 -->
+<div class="phone">
+    <!--<div id="header">-->
+    <!--<img src="/Public/img/list.png" alt="" class="list">-->
+    <!--我-->
+    <!--</div>-->
+    <div class="mt_content">
+        <div id="me">
+            <div class="user_name_box">
+                <center class="username">
+                    <empty name="user.face"><img src="/Public/img/face.png" alt="" class="face"><else /><img src="{$user.face}" alt="" class="face"></empty>
+                    <div class="small_user_box">
+                        <p>用户名称：</p>
+                        <p>上次登录：<empty name="user.login_time">首次登陆<else /></empty></p>
+                        <div class="right_info_box">
+                            <p class="renzheng">
+                                <span>安全等级：</span>
+                                <a href="" class="a2" title="手机认证"><notempty name="user.phone"><img src="/Public/img/user_info/phone_state.png"  width="15" height="15" alt=""><else /><img src="/Public/img/user_info/phone_state0.png"width="15" height="15" alt=""></notempty></a>
+                                <a href="" class="a1" title="邮箱认证"><notempty name="user.email"><img src="/Public/img/user_info/email_state.png" width="15" height="15"   alt=""><else /><img src="/Public/img/user_info/email_state0.png" width="15" height="15" alt=""></notempty></a>
+                                <a href="" class="a4" title="银行卡绑定"><notempty name="user.card"><img src="/Public/img/user_info/card_state.png"  width="15" height="15" alt=""><else /><img src="/Public/img/user_info/card_state0.png" width="15" height="15" alt=""></notempty></a>
+                            </p></div>
+                    </div>
+                </center>
+                <p style="margin: -110px 288px;"><a href="/rx/login/logout"><img src="/Public/img/me_logout.png" alt=""><span style="font-size:12px;display:inline-block;width: 35px;color: white;margin: -15px 0px 0px 11px">退出</span></a></p>
+            </div>
+
+            <div class="me_box">
+                <ul>
+
+                    <li style="width:22%;height: 89px"> <a href=""><img src="/Public/img/me_jilu.png" alt="">国际期货</a></li>
+                    <li style="width: 77%;height: auto">	<div class="qihuo"><div class="qihuo_box aqihuo_box">
+                        <h5><a href="" download="国际期货风控规则" class="download_rule" style="color: #42a7db;" id="rule_aqihuo">国际风控规则</a><a href="/{$Request.module}/Userinfo/dealRecord?market=aqihuo" style="color: #42a7db;font-size: 14px" class="to_record">充值提款记录</a></h5>
+                        <p><span class="qihuo_account">交易账号：</span><span style="font-size:14px;left:207px;position: absolute;" class="account_code"></span><p style="margin: -16px 47px 0px 0px"><span style="position: absolute;left: 215px;" class="account_code">无</span><span class="to_bind"></span><a href="/{$Request.module}/Pay/open" class="to_pay" style="    margin: 15px 29px 0 0">开户</a><a href="/{$Request.module}/Pay/old" class="to_pay" style="margin: 15px 29px 0 0">绑定旧户</a></p></p>
+                    </div></div></li>
+                    <!--<li><a href="/agent/userinfo/dealRecord"><img src="/Public/img/me_mingxi.png" alt="">充值提款记录查询</a></li>-->
+                    <!--<li><a href="" download="国际期货风控规则" class="download_rule" id="rule_aqihuo"><img src="/Public/img/me_dingdan.png" alt="" >国际期货市场规则</a></li>-->
+                    <li style="width:22%;height:89px;"><a href=""><img src="/Public/img/me_dingdan.png" alt="">国内期货</a></li>
+                    <li style="width: 77%;height: 100%"><div style="height: 77px" class="qihuo"><div class="qihuo_box dqihuo_box">
+                        <h5><a href="" download="国内期货风控规则" class="download_rule"style="color: #42a7db;" id="rule_dqihuo">国内风控规则</a><a href="" style="color: #42a7db;font-size: 14px" class="to_record">充值提款记录</a></h5>
+                        <p><span class="qihuo_account" style="margin-right: 148px;">交易账号：</span><span style="font-size:14px;left:213px;position: absolute;" class="account_code"></span><p style="margin: -16px 46px 0px 0px"><span style="position: absolute;left: 215px;" class="account_code">无</span><span class="to_bind"></span><a href="/{$Request.module}/Pay/open_d" style=" margin: 15px 29px 0 0"  class="to_pay">开户</a><a href="/{$Request.module}/Pay/olds" class="to_pay" style="margin: 15px 29px 0 0 ;">绑定旧户</a></p>
+                        <!--<p><span class="account_code"></span><a href="/{$Request.module}/Withdraw/withdraw/type/dqihuo" class="to_pay" style="float: none;display: inline-block">出金</a><a href="/{$Request.module}/Pay/dqihuoPay" class="to_pay" style="float: none;height: 25px;display: inline-block">入金</a><a href="" class="to_pay" style="float: none;display: inline-block">调整手数</a></p>-->
+                    </div></div></li>
+
+                    <div style="clear:both;"></div>
+                    <div style="color:red;font-size: 12px">
+                        <!--<p style="color:red;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;01.两市场品种和时间不同，“风控规则”也不同。</p> <p style="color:red;font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;02.交易前请先阅读“风控规则”,如有不明请咨询客服。</p> -->
+                    </div>
+
+                </ul>
+
+                <div class="me_box">
+                    <ul style="margin:0px 13px;border-top: none; border-left: none; ">
+                        <li style="border-right: none; border-bottom: none; "><a href="/personal/user/files"><img  src="/Public/img/nav_goods.png" style="opacity: 0.7" alt=""><p style="color: #42a7db">关于我们</p></a></li>
+                        <li style="border-right: none; border-bottom: none; "><a href="/personal/user/old"><img src="/Public/img/newbanb2.png" style="opacity: 0.7" alt=""><p style="padding: 0 8px;color: #42a7db">联系客服</p></a></li>
+                        <li style="border-right: none; border-bottom: none; "><a href="/personal/user/news"><img src="/Public/img/newbanb3.png" style="opacity: 0.7" alt=""><p style="padding: 0 8px;color: #42a7db">新手指导</p></a></li>
+                    </ul>
+                    <div style="padding:  0 22px;"></div>
+                    <div style=""></div>
+                    <!--<div   style="padding:30px 0 0 0;color:red;font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;备注：您好，请您在交易前，先下载并仔细阅读相应市场的风控规则，两个市场的交易品种·时间不同，风控规则也不同。</div>-->
+                </div>
+
+            </div>
+        </div>
+        <div class="qr-btn" node-type="jsbridge">扫描二维码1
+        <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码1" />
+    </div>
+    </div>
+    <!-- 移动端 END -->
+
+    <!-- 移动端 END -->
+</div>
+
+<script>
+
+    //初始化扫描二维码按钮，传入自定义的 node-type 属性
+    $(function() {
+        Qrcode.init($('[node-type=jsbridge]'));
+    });
+    (function($) {
+        var Qrcode = function(tempBtn) {
+//该对象只支持微博域下的解析，也就是说不是微博域下的页面只能用第二种方案解析二维码
+            if (window.WeiboJSBridge) {
+                $(tempBtn).on('click', this.weiBoBridge);
+            } else {
+                $(tempBtn).on('change', this.getImgFile);
+            }
+        };
+        Qrcode.prototype = {
+            weiBoBridge: function() {
+                WeiboJSBridge.invoke('scanQRCode', null, function(params) {
+//得到扫码的结果
+                    location.href=params.result;
+                });
+            },
+            getImgFile: function() {
+                var _this_ = this;
+                var imgFile = $(this)[0].files;
+                var oFile = imgFile[0];
+                var oFReader = new FileReader();
+                var rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
+                if (imgFile.length === 0) {
+                    return;
+                }
+                if (!rFilter.test(oFile.type)) {
+                    alert("选择正确的图片格式!");
+                    return;
+                }
+//读取图片成功后执行的代码
+                oFReader.onload = function(oFREvent) {
+                    qrcode.decode(oFREvent.target.result);
+                    qrcode.callback = function(data) {
+//得到扫码的结果
+                        location.href = data;
+                        alert(location.href);
+                    };
+                };
+                oFReader.readAsDataURL(oFile);
+            },
+            destory: function() {
+                $(tempBtn).off('click');
+            }
+        };
+//初始化
+        Qrcode.init = function(tempBtn) {
+            var _this_ = this;
+            var inputDom;
+            tempBtn.each(function() {
+                new _this_($(this));
+            });
+            $('[node-type=qr-btn]').on('click', function() {
+                $(this).find('[node-type=jsbridge]')[0].click();
+            });
+        };
+        window.Qrcode = Qrcode;
+    })(window.Zepto ? Zepto : jQuery);
+</script>
+</body>
+</html>

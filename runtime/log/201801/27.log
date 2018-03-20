@@ -1,0 +1,431 @@
+---------------------------------------------------------------
+[ 2018-01-27T16:56:45+08:00 ] 127.0.0.1 127.0.0.1 GET /rx/rx/index
+[ info ] tp.com/rx/rx/index [运行时间：0.038002s][吞吐率：26.31req/s] [内存消耗：1,235.87kb] [文件加载：33]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->index[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ VIEW ] C:\AppServ\www\tp\public/../xmyttz/rx\view\rx\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-27T16:56:48+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ info ] tp.com/favicon.ico [运行时间：0.031001s][吞吐率：32.26req/s] [内存消耗：907.70kb] [文件加载：27]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-27T16:56:49+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/send_HSI
+[ info ] tp.com/rx/rx/send_HSI [运行时间：1.039059s][吞吐率：0.96req/s] [内存消耗：1,262.95kb] [文件加载：36]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'send_HSI',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->send_HSI[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Redis::connect(): [C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php:73]
+---------------------------------------------------------------
+[ 2018-01-27T16:56:49+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/send
+[ info ] tp.com/rx/rx/send [运行时间：1.041060s][吞吐率：0.96req/s] [内存消耗：1,263.56kb] [文件加载：36]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'send',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '7',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'CL',
+)
+[ info ] [ RUN ] app\rx\controller\Rx->send[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Redis::connect(): [C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php:26]
+---------------------------------------------------------------
+[ 2018-01-27T16:56:49+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/send_GC
+[ info ] tp.com/rx/rx/send_GC [运行时间：1.062061s][吞吐率：0.94req/s] [内存消耗：1,262.94kb] [文件加载：36]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'send_GC',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->send_GC[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Redis::connect(): [C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php:47]
+---------------------------------------------------------------
+[ 2018-01-27T16:56:49+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/money
+[ info ] tp.com/rx/rx/money [运行时间：1.065061s][吞吐率：0.94req/s] [内存消耗：1,262.94kb] [文件加载：36]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'money',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->money[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Redis::connect(): [C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php:222]
+---------------------------------------------------------------
+[ 2018-01-27T16:56:49+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/send_CL
+[ info ] tp.com/rx/rx/send_CL [运行时间：1.069061s][吞吐率：0.94req/s] [内存消耗：1,262.94kb] [文件加载：36]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'send_CL',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->send_CL[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]Redis::connect(): [C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php:100]
+---------------------------------------------------------------
+[ 2018-01-27T16:57:06+08:00 ] 127.0.0.1 127.0.0.1 GET /rx/rx/index
+[ info ] tp.com/rx/rx/index [运行时间：0.029001s][吞吐率：34.48req/s] [内存消耗：1,236.69kb] [文件加载：33]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->index[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ VIEW ] C:\AppServ\www\tp\public/../xmyttz/rx\view\rx\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-27T16:57:06+08:00 ] 127.0.0.1 127.0.0.1 GET /Public/js/echarts.js.map
+[ info ] tp.com/Public/js/echarts.js.map [运行时间：0.023002s][吞吐率：43.47req/s] [内存消耗：907.69kb] [文件加载：27]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'Public',
+    1 => 'js',
+    2 => 'echarts.js.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-27T16:57:07+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/money
+[ info ] tp.com/rx/rx/money [运行时间：0.076004s][吞吐率：13.16req/s] [内存消耗：1,908.95kb] [文件加载：40]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'money',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->money[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=yingtou;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yt_users` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `yt_users` WHERE  `username` IS NULL  AND `del` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yt_trading` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `yt_trading` WHERE  `user_id` IS NULL  AND `del` = 0 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-01-27T16:57:08+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/send_CL
+[ info ] tp.com/rx/rx/send_CL [运行时间：1.044060s][吞吐率：0.96req/s] [内存消耗：1,239.34kb] [文件加载：33]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'send_CL',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->send_CL[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-27T16:57:08+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/send_GC
+[ info ] tp.com/rx/rx/send_GC [运行时间：1.033060s][吞吐率：0.97req/s] [内存消耗：1,239.34kb] [文件加载：33]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'send_GC',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->send_GC[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-27T16:57:08+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/send_HSI
+[ info ] tp.com/rx/rx/send_HSI [运行时间：1.059061s][吞吐率：0.94req/s] [内存消耗：1,239.35kb] [文件加载：33]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'send_HSI',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->send_HSI[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-27T16:57:18+08:00 ] 127.0.0.1 127.0.0.1 POST /rx/rx/send
+[ info ] tp.com/rx/rx/send [运行时间：11.236419s][吞吐率：0.09req/s] [内存消耗：1,240.21kb] [文件加载：33]
+[ info ] [ LANG ] C:\AppServ\www\tp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'rx',
+    2 => 'send',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'content-length' => '7',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://tp.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://tp.com/rx/rx/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1612af907b84c-062d2a3e389d18-454c092b-140000-1612af907b9543; CNZZDATA1261565474=133403515-1516842055-%7C1516930565; password=KzoZdUBk7X3n8w25FxMTzVJBWtakBeFsLOcGX49hVswFGmQvTckMnkNIoC9FxNuzQzWgHm8OB5BslOxjDL4nvAdjpTTLDC78iNdVOkds3FRLOWAhw3f5STXG653ZL%2Bq%2BEpZhboIHPqQjFdKZA1pqvk%2BmybLrsUM0HznPPQY85Nk%3D',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'CL',
+)
+[ info ] [ RUN ] app\rx\controller\Rx->send[ C:\AppServ\www\tp\xmyttz\rx\controller\Rx.php ]
+[ info ] [ LOG ] INIT File

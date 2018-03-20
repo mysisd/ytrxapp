@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+    <script src="/Public/js/rx_money.js"></script>
+</head>
+<body>
+<div class="buy_title" >
+<ul>
+    <li><img src="/Public/img/left_arrow.png" alt=""></li>
+    <li><i>{$type}</i></li>
+</ul>
+</div>
+<div class="buy_all">
+    <div class="buy_one">
+   <p class="buy_new">{$QLastPrice}</p>
+        <div class="buy_math">
+            <ul>
+                <li><span>卖价&nbsp;&nbsp;</span><span class="sell">{$sell}</span></li>
+                <li><span>买价&nbsp;&nbsp;</span><span class="pay">{$pay}</span></li>
+            </ul>
+        </div>
+        <div class="buy_but">
+                <div class="but">
+                    <ul>
+                        <li><a href="/rx/rx/buy_shop_sell" class="shops" target="myFrameName">市价单 <p style="display: none"></p></a></li>
+                        <li><a href="/rx/rx/buy_price_sell" target="myFrameName">限价单</a></li>
+                        <!--<li><a>条件单</a></li>-->
+                    </ul>
+                </div>
+        </div><iframe  id="myFrameId" style="" name="myFrameName" scrolling="no" frameborder="0"></iframe>
+        </div>
+          </div>
+
+<script>
+    $(".but li a").eq(0).css({color:'#e6cb91'});
+
+</script>
+</body>
+</html>

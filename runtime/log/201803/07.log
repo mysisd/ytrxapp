@@ -1,0 +1,135 @@
+---------------------------------------------------------------
+[ 2018-03-07T10:28:25+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] tp.com/ [运行时间：0.762043s][吞吐率：1.31req/s] [内存消耗：1,311.73kb] [文件加载：33]
+[ info ] [ LANG ] C:\AppServ\www\oo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'names=GC1804; bdshare_firstime=1520215380697; UM_distinctid=161f5283a7e556-0dd4527375295c-454c092b-15f900-161f5283a7f56e; CNZZDATA1261565474=577779066-1520235875-%7C1520235875; Hm_lvt_4bad1df23f079e0d12bdbef5e65b072f=1519957894,1520236654',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->index[ C:\AppServ\www\oo\xmyttz\rx\controller\Rx.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] C:\AppServ\www\oo\public/../xmyttz/rx\view\rx\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-03-07T10:28:25+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] tp.com/ [运行时间：2.040116s][吞吐率：0.49req/s] [内存消耗：1,311.73kb] [文件加载：33]
+[ info ] [ LANG ] C:\AppServ\www\oo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'names=GC1804; bdshare_firstime=1520215380697; UM_distinctid=161f5283a7e556-0dd4527375295c-454c092b-15f900-161f5283a7f56e; CNZZDATA1261565474=577779066-1520235875-%7C1520235875; Hm_lvt_4bad1df23f079e0d12bdbef5e65b072f=1519957894,1520236654',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Rx->index[ C:\AppServ\www\oo\xmyttz\rx\controller\Rx.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] C:\AppServ\www\oo\public/../xmyttz/rx\view\rx\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-03-07T10:28:26+08:00 ] 127.0.0.1 127.0.0.1 GET /rx/login/login
+[ info ] tp.com/rx/login/login [运行时间：0.243013s][吞吐率：4.12req/s] [内存消耗：1,213.25kb] [文件加载：32]
+[ info ] [ LANG ] C:\AppServ\www\oo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'rx',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'names=GC1804; names=GC1804; bdshare_firstime=1520215380697; UM_distinctid=161f5283a7e556-0dd4527375295c-454c092b-15f900-161f5283a7f56e; CNZZDATA1261565474=577779066-1520235875-%7C1520235875; Hm_lvt_4bad1df23f079e0d12bdbef5e65b072f=1519957894,1520236654; PHPSESSID=h67ks9ijpm0k3uqdp6rdec2b46',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\rx\controller\Login->login[ C:\AppServ\www\oo\xmyttz\rx\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] C:\AppServ\www\oo\public/../xmyttz/rx\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-03-07T10:28:27+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ info ] tp.com/favicon.ico [运行时间：0.529030s][吞吐率：1.89req/s] [内存消耗：907.64kb] [文件加载：27]
+[ info ] [ LANG ] C:\AppServ\www\oo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp.com/rx/login/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'names=GC1804; bdshare_firstime=1520215380697; UM_distinctid=161f5283a7e556-0dd4527375295c-454c092b-15f900-161f5283a7f56e; CNZZDATA1261565474=577779066-1520235875-%7C1520235875; Hm_lvt_4bad1df23f079e0d12bdbef5e65b072f=1519957894,1520236654; PHPSESSID=h67ks9ijpm0k3uqdp6rdec2b46',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File

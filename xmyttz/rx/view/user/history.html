@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交易历史</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">交易历史</h1>
+</header>
+<div style="margin: 49px 0 ">
+    <div class="time_sel">
+        <p >
+            <span class="begin_time"> </span>
+            <span style="display: inline-block; width: 20px;font-size: 19px;">至</span>
+            <span class="end_time"></span>
+            <span><img src="/Public/img/sea.png" alt=""></span>
+        </p>
+
+    </div>
+    <table width="100%" class="table" id="tablevalue">
+        <tr>
+            <th width=16%>合约</th>
+            <th width=16%>成交时间</th>
+            <th width=16%>买卖</th>
+            <th width=16%>数量</th>
+            <th width=16%>委托价</th>
+            <th width=16%>成交价</th>
+        </tr>
+        <tr>
+            <td>HSI</td>
+            <td>12:21</td>
+            <td>100</td>
+            <td>100</td>
+            <td>35.21</td>
+            <td>34.15</td>
+        </tr>
+    </table>
+    
+</div>
+<script>
+
+    var year=new Date().getFullYear() ;
+    var  month=new Date().getMonth()+1;
+    var day=new Date().getDate();
+    var days=new Date().getDate()+1;
+    $('.begin_time').text(year+'-'+month+'-'+day);
+    $('.end_time').text(year+'-'+month+'-'+days);
+    var dtpicker = new mui.DtPicker({
+        "type": "date",
+        'beginYear':year,
+        "beginMonth":month,
+        "beginDay":day
+    })
+    document.querySelector('.begin_time').addEventListener('tap',function () {
+        dtpicker.show(function(e) {
+            $('.begin_time').text(e.value);
+        })
+    })
+    document.querySelector('.end_time').addEventListener('tap',function () {
+        dtpicker.show(function(e) {
+            $('.end_time').text(e.value);
+        })
+    })
+</script>
+</body>
+</html>

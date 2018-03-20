@@ -1,0 +1,244 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--<meta name="baidu-sit指标参数设置e-verification" content="DwmS6mQC0u">-->
+
+
+    <title>行情图</title>
+</head>
+<body >
+<script src="/Public/js/jquery.min.js"></script>
+<script src="/Public/js/highstock.js"></script>
+<script>
+    Highcharts.setOptions({
+        global: {
+            useUTC: true
+        },
+        lang : {
+            rangeSelectorZoom : '',
+            months : [ '一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+            shortMonths : [ '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月',
+                '9月', '10月', '11月', '12月' ],
+            weekdays : [ '周日', '周一', '周二', '周三', '周四', '周五', '周六' ]
+        }
+    });
+
+    function initKline(){
+        var chart=null;
+        var path = "/Public/json/data.json";
+        $.getJSON(path,function(result) {
+
+            if (result['datas'].length == 0) {
+                return;
+            }
+            var data = result['datas'];
+            var ohlc = [],ave5=[],ave10=[],ave30=[], dataLength = data.length;
+            for (i = 0; i < dataLength; i++) {
+                ohlc.push([ data[i][0], data[i][1],	data[i][2], data[i][3],data[i][4] ]);
+                ave5.push([
+                    data[i][0],
+                    data[i][1]
+                ]);
+                ave10.push([
+                    data[i][0],
+                    data[i][2]
+                ]);
+                ave30.push([
+                    data[i][0],
+                    data[i][3]
+                ]);
+            }
+            var option={
+                chart:{
+                    width:720,
+                    height:400,
+                    renderTo:"container",
+                    plotBorderWidth: 1,
+                    plotBackgroundColor: 'rgba(255, 255, 255, .9)',
+                    plotShadow: true,
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+                        stops: [
+                            [0, 'rgb(255, 255, 255)'],
+                            [1, 'rgb(240, 240, 255)']
+                        ]
+                    }
+                },
+                rangeSelector : {
+                    buttonSpacing:5,
+                    buttonTheme: {
+                        width:50,
+                        fill: 'none',
+                        stroke: 'none',
+                        'stroke-width': 0,
+                        r: 4,
+                        style: {
+                            color: '#039',
+                            fontWeight: 'bold'
+                        },
+                        states: {
+                            hover: {
+                            },
+                            select: {
+                                fill: '#039',
+                                style: {
+                                    color: 'white'
+                                }
+                            }
+                        }
+                    },
+                    enabled: true,
+                    selected:0,
+                    inputEnabled : false,
+                    buttons : [ {
+                        type : 'day',
+                        count : 1,
+                        text : '日K'
+                    }, {
+                        type : 'day',
+                        count : 7,
+                        text : '周K'
+                    }, {
+                        type : 'month',
+                        count : 1,
+                        text : '月K'
+                    }, {
+                        type : 'minute',
+                        count : 5,
+                        text : '5分钟'
+                    } , {
+                        type : 'minute',
+                        count : 15,
+                        text : '15分钟'
+                    }, {
+                        type : 'minute',
+                        count : 30,
+                        text : '30分钟'
+                    }, {
+                        type : 'hour',
+                        count : 1,
+                        text : '60分钟'
+                    } ]
+                },
+                credits:{enabled:false},
+                exporting : {
+                    enabled : false
+                },
+                colors : [ '#000000','#0000ff','#ff00ff','#f7a35c','#8085e9' ],
+                title : {
+                    text : 'K线图实例'
+                },
+                yAxis : [ {
+                    lineWidth: 0,
+                    labels: {
+                        align: 'right',
+                        x: 0,
+                        y: 0,
+                        formatter: function () {
+                            return this.value.toFixed(0);
+                        }
+                    },
+                    opposite: false
+                } ],
+                tooltip : {
+                    formatter : function() {
+                        var s = Highcharts.dateFormat('<span> %Y-%m-%d %H:%M:%S</span>',this.x);
+                        s += '<br />开盘:<b>'
+                            +this.points[0].point.open
+                            + '</b><br />最高:<b>'
+                            + this.points[0].point.high
+                            + '</b><br />最低:<b>'
+                            + this.points[0].point.low
+                            + '</b><br />收盘:<b>'
+                            + this.points[0].point.close
+                            + '</b>';
+                        return s;
+                    },
+                    shared : true,
+                    useHTML : true,
+                    valueDecimals : 2, //有多少位数显示在每个系列的y值
+                    crosshairs : [ {
+                        color : '#b9b9b0'
+                    }, {
+                        color : '#b9b9b0'
+                    } ]
+                },
+                scrollbar : {
+                    enabled : true
+                },
+                plotOptions : {
+                    candlestick : {
+                        color : '#6d9e81',
+                        upColor : '#cc5444'
+                    },
+                    line : {
+                        marker : {
+                            states : {
+                                hover : {
+                                    enabled : false
+                                },
+                                select : {
+                                    enabled : true
+                                }
+                            }
+                        },
+                        states : {
+                            hover : {
+                                enabled : false
+                            }
+                        }
+                    }
+                },
+                navigator: { enabled: true },
+                series : [
+                    {
+                        type : 'candlestick',
+                        name : '股票走势',
+                        data : ohlc
+                    },
+                    {
+                        type: 'line',
+                        lineWidth:0.8,
+                        data: ave5
+                    },
+                    {
+                        type: 'line',
+                        lineWidth:0.8,
+                        data: ave10
+                    },
+                    {
+                        type: 'line',
+                        lineWidth:0.8,
+                        data: ave30
+                    }
+                ]
+            };
+            chart=new Highcharts.StockChart(option);
+        });
+
+    }
+    function addZero(str){
+        if(str<10){
+            return str = '0' + str
+        }
+        return str
+    }
+    function UTC(time){
+        if(time==undefined) return
+        if (time.length < 10) {
+            time = '' + time;
+            return Date.UTC(time.substring(0, 4), time.substring(4, 6) - 1, time.substring(6,8));
+        } else {
+            time = '' + time;
+            return Date.UTC(time.substring(0, 4), time.substring(4, 6) - 1, time.substring(6, 8), time.substring(9, 11), time.substring(12, 14), time.substring(15, 17));
+        }
+    }
+    initKline();
+    addZero();
+    UTC();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <include file="../xmyttz/view/rx_head.html"/>
+    <style>
+        #header_bottom .to_me{
+            background-color:#268bf2;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="phone">
+
+    <div class="mt_content">
+        <div id="mt_login">
+            <img src="{$Request.root}/Public/img/logo_small.png" alt="" class="login_logo">
+            <div class="user_pwd">
+                <p class="user_p"><span>手机号码</span><input type="text" name="phone" placeholder="请输入手机号" id="mt_login_phone"></p>
+                <p><span>登录密码</span><input type="password" onfocus="this.type='password'" name="password" placeholder="请输入密码" id="mt_login_pwd" autocomplete="off"></p>
+            </div>
+
+            <button type="button" id="mt_login_sub">登录</button>
+            <div class="btm">
+                <a href="/{$Request.module}/register/register" class="to_reg">注册</a>
+                <a href="/{$Request.module}/{$Request.controller}/findpwd" class="to_find">忘记密码</a>
+            </div>
+        </div>
+    </div>
+</div>
+<img src="{$Request.root}/Public/img/loading.jpg" alt="" id="loading_img">
+<div id="overlay"></div>
+<div id="error_system">
+    <div class="error_system_box">
+        <img src="{$Request.root}/Public/img/error.png" alt=""><div class="error_system_content"><p id="error_system_text"></p></div>
+    </div>
+</div>
+</body>
+
+</html>

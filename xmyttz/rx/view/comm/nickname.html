@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="../xmyttz/view/rx_head.html"></include>
+</head>
+<body>
+<div class="buy_title" style="border-bottom: 1px solid rgba(1,1,1,0.2);background-color: black;color:white">
+    <ul>
+        <li><img  style="width: 78%" src="/Public/img/left_arrow_w.png" alt=""></li>
+        <li style="text-align: center;width: 66%;margin: 14px 10px;">我的昵称</li>
+        <li  style="text-align: center;" id="save">保存</li>
+    </ul>
+</div>
+<div>
+    <input type="text" id="nickname" value="{$data.nickname}">
+</div>
+<script>
+    $(function () {
+        $('#save').click(function () {
+            var nickname=$('#nickname').val();
+            $.ajax({
+                url:'/rx/comm/nickname',
+                type:'post',
+                data:{'nickname':nickname},
+                success:function (data) {
+                    if(data.res=='success'){
+                        alert('保存成功');
+                        location.href='/rx/comm/index';
+                    }else if(data.res=='error'){
+                        alert('保存失败');
+                        location.reload();
+                    }
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

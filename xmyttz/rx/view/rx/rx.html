@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+</head>
+<body>
+
+<div class="phone">
+    <!--开始动画-->
+    <div class="animate">
+        <span style="display: none" id="jumpTo">5</span>
+        <img class="img" src="/Public/img/banner/bg1.jpg" width="100%" alt="">
+        <!--<img width="100%"class="img" id="animate"  src="/Public/img/banner/bg5.jpg" alt="">-->
+        <div id="skip">
+            跳过
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+    function ok(){
+        window.parent.parent.location.href='http://xmyttz.com/rx/rx/index';
+    }
+    window.setTimeout("ok();",3000);
+    function countDown(secs){
+        var jumpTo = document.getElementById('jumpTo');
+        jumpTo.innerHTML=secs;
+
+        if(--secs>0)
+            setTimeout( "countDown(" +secs+ ")" ,5000);
+    }
+    countDown(3);
+</script>
+</html>

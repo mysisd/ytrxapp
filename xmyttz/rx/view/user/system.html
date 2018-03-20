@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <include file="../xmyttz/view/rx_head.html"></include>
+    <style>
+        a{
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body >
+<div class="curtain" style="display: none"></div>
+    <header class="mui-bar mui-bar-nav">
+        <a href="/rx/user/index1" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">系统设置</h1>
+    </header>
+<div style="margin: 46px 0">
+    <div class="password">密码设置</div>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a href="/rx/user/set_password" class="mui-navigate-right">修改登录密码 </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a  class="mui-navigate-right" href="/rx/user/set_dealpassword">修改交易密码</a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" href="/rx/user/resert">重置交易密码</a>
+        </li>
+    </ul>
+    <div class="password">交易密码提示时间</div>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a id="select_time" class="mui-navigate-right">设置交易密码提示时间 <span id="time" style="float: right;padding: 0 24px">1小时</span> </a>
+        </li>
+    </ul>
+    <div class="password">行情刷新</div>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+        <a id="select_refresh" class="mui-navigate-right">2G/3G/4G <span id="refresh" style="float: right;padding: 0 24px">1秒</span> </a>
+    </li>
+        <li class="mui-table-view-cell">
+            <a id="wifi" class="mui-navigate-right">wifi <span id="re_wifi" style="float: right;padding: 0 24px">500毫秒</span> </a>
+        </li>
+    </ul>
+</div>
+
+<!--<div class="current" ></div>-->
+</body>
+<script>
+    $(function () {
+        $.ajax({
+            url:'/rx/user/sys',
+            type:'post',
+            success:function (data) {
+                if(data['net_time']=='500'){
+                    $('#refresh').html(data['net_time']+'毫秒');
+                }else if(data['net_time']=='0'){
+                    $('#refresh').html('不刷新');
+                }
+                else{
+                    $('#refresh').html(data['net_time']+'秒');
+                }
+                if(data['wifi_time']=='500'){
+                    $('#re_wifi').html(data['wifi_time']+'毫秒');
+                }else if(data['wifi_time']=='0'){
+                    $('#re_wifi').html('不刷新');
+                }
+                else{
+                    $('#re_wifi').html(data['wifi_time']+'秒');
+                }
+                if(data['pass_time']=='0'){
+                    $('#time').html('不刷新');
+                }else{
+                    $('#time').html(data['pass_time']+'小时');
+                }
+
+
+
+            }
+        })
+    })
+</script>
+<script>
+    document.querySelector('#select_time').addEventListener("tap", function() {
+        var roadPick = new mui.PopPicker();//获取弹出列表组建，假如是二联则在括号里面加入{layer:2}
+        roadPick.setData([
+            {
+                value: "0.1",
+                text: "10分钟"
+            }
+            ,{
+            value: "0.5",
+            text: "30分钟"
+        },
+            {
+                value: "1",
+                text: "1小时"
+            },
+             {
+                value: "2",
+                text: "2小时"
+            },
+            {
+                value: "4",
+                text: "4小时"
+            },
+            {
+                value: "6",
+                text: "6小时"
+            },
+            {
+                value: "8",
+                text: "8小时"
+            },
+            {
+                value: "0",
+                text: "不提示"
+            }
+        ]);
+        roadPick.show(function (item) {
+
+            var itemCallback=roadPick.getSelectedItems();
+            console.log(itemCallback);
+            $('#time').html(itemCallback[0].text);
+            $.ajax({
+                url:'/rx/user/re_pass',
+                type:'post',
+                data:{'pass_time':itemCallback[0].value}
+            })
+        })
+
+    });
+    document.querySelector('#select_refresh').addEventListener("tap", function() {
+        var roadPick = new mui.PopPicker();//获取弹出列表组建，假如是二联则在括号里面加入{layer:2}
+        roadPick.setData([{
+            value: "10",
+            text: "10秒"
+        },
+            {
+                value: "5",
+                text: "5秒"
+            },
+            {
+                value: "500",
+                text: "500毫秒"
+            },
+            {
+                value: "0",
+                text: "不刷新"
+            }
+        ]);
+        roadPick.show(function (item) {
+
+            var itemCallback=roadPick.getSelectedItems();
+            console.log(itemCallback);
+            $('#refresh').html(itemCallback[0].text);
+            $.ajax({
+                url:'/rx/user/re_net',
+                type:'post',
+                data:{'net_time':itemCallback[0].value},
+            })
+        })
+
+    });
+    document.querySelector('#wifi').addEventListener("tap", function() {
+        var roadPick = new mui.PopPicker();//获取弹出列表组建，假如是二联则在括号里面加入{layer:2}
+        roadPick.setData([
+            {
+                value: "1",
+                text: "1秒"
+            },
+            {
+                value: "500",
+                text: "500毫秒"
+            },
+            {
+                value: "0",
+                text: "不刷新"
+            }
+        ]);
+        roadPick.show(function (item) {
+            var itemCallback=roadPick.getSelectedItems();
+            $('#re_wifi').html(itemCallback[0].text);
+            $.ajax({
+                url:'/rx/user/re_wifi',
+                type:'post',
+                data:{'wifi_time':itemCallback[0].value},
+                success:function (data) {
+                
+                }
+            })
+        })
+
+    });
+</script>
+<script>
+    $(function () {
+        var d=window.screen.height*0.5;
+        $('.net').width( window.screen.width);
+        $('.net').height(d);
+        $('.curtain').width( document.documentElement.clientWidth);
+        $('.curtain').height(document.documentElement.clientHeight);
+
+
+    })
+
+</script>
+
+</html>
